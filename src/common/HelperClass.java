@@ -22,7 +22,7 @@ public class HelperClass {
                 try {
                     return scanner.nextLine();
                 } catch (Exception e) {
-                    System.out.print("Der eingegebene Wert ist keine Ganzzahl. Versuchen sie es erneut: ");
+                    System.out.print("Der eingegebene Wert ist ungültig. Versuchen sie es erneut: ");
                     scanner.nextLine();
                     return getInput(scanner, inputType);
                 }

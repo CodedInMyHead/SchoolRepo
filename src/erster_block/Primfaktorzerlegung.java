@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class Primfaktorzerlegung {
 
-    private static final List<Integer> integerArrayList = new ArrayList<>();
     private static int targetNumber;
+    private static boolean found = false;
 
     public static void main(String[] args) {
 
@@ -18,12 +18,12 @@ public class Primfaktorzerlegung {
         final Scanner scanner = new Scanner(System.in);
         targetNumber = (Integer) HelperClass.getInput(scanner, InputType.INT);
 
-        mainLoop();
-        integerArrayList.forEach(System.out::println);
+        mainLoop().forEach(System.out::println);
     }
 
-    private static void mainLoop() {
-        boolean found = false;
+    private static List<Integer> mainLoop() {
+        final List<Integer> integerArrayList = new ArrayList<>();
+
         for (int i = 2; i < targetNumber; i++) {
             if(targetNumber % i == 0 && !found) {
                 integerArrayList.add(i);
@@ -33,8 +33,8 @@ public class Primfaktorzerlegung {
         }
         if(!found) {
             integerArrayList.add(targetNumber);
-            return;
+            return integerArrayList;
         }
-        mainLoop();
+        return mainLoop();
     }
 }
