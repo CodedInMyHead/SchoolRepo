@@ -1,5 +1,7 @@
 package common;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class HelperClass {
@@ -8,6 +10,8 @@ public class HelperClass {
     private HelperClass(){}
 
     public static Object getInput(final Scanner scanner, final InputType inputType) {
+
+
 
         switch (inputType) {
             case INT:
